@@ -1,0 +1,14 @@
+AMQP_URI: amqp://${RABBIT_USER:guest}:${RABBIT_PASSWORD:guest}@${RABBIT_HOST:localhost}:${RABBIT_PORT:5672}/
+
+LOGGING:
+  version: 1
+  formatters:
+    gateway:
+      format: "%(name)s | time=%(asctime)s level=%(levelname)s msg=%(message)s"
+  handlers:
+    console:
+      class: logging.StreamHandler
+      formatter: gateway
+  root:
+    level: DEBUG
+    handlers: [console]

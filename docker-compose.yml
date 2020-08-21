@@ -1,0 +1,28 @@
+version: "2"
+services:
+  ### AMQP ###
+  rabbit:
+    container_name: bacana-maneiro-rabbitmq
+    image: rabbitmq:3.7-management
+    ports:
+        - "5672:5672"
+        - "15672:15672"
+    restart: always
+
+  ### HTTP ###
+  gateway:
+    container_name: gateway
+    image: bacana-maneiro-gateway
+    depends_on:
+      - rabbit
+    ports:
+        - "8001:8000"
+    links:
+        - "rabbit:bacana-maneiro-rabbitmq"
+    environment:
+        RABBIT_PASSWORD: "guest"
+        RABBIT_USER: "guest"
+        RABBIT_HOST: "rabbit"
+        RABBIT_PORT: "5672"
+        RABBIT_MANAGEMENT_PORT: "15672"
+

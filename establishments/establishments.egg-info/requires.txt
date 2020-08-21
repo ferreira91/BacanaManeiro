@@ -1,0 +1,5 @@
+nameko==v3.0.0-rc8
+nameko-sqlalchemy==1.5.0
+
+[dev]
+pytest==5.4.3

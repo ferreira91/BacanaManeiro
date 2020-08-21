@@ -1,0 +1,14 @@
+replicaCount: 1
+image:
+    tag: v1
+    name:
+    imagePullPolicy: Always
+ingressPort: 80
+servicePort: 8000
+rabbit:
+  host:
+  port:
+  managementPort:
+  user:
+  passwordSecretName:
+  passwordSecretKey:

@@ -1,0 +1,5 @@
+marshmallow==v3.7.0
+nameko==v3.0.0-rc8
+
+[dev]
+pytest==5.4.3

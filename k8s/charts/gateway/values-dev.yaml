@@ -1,0 +1,14 @@
+replicaCount: 1
+image:
+  tag: latest
+  name: gateway
+  imagePullPolicy: Never
+ingressPort: 80
+servicePort: 8000
+rabbit:
+  host: broker-rabbitmq
+  port: "5672"
+  managementPort: "15672"
+  user: user
+  passwordSecretName: broker-rabbitmq
+  passwordSecretKey: rabbitmq-password
